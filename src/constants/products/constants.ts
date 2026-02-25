@@ -1,4 +1,4 @@
-import { DEFAULT_CURRENCY } from "../shared";
+import { DEFAULT_CURRENCY } from "@constants/shared";
 import {
   PRODUCT_CODES,
   type Product,

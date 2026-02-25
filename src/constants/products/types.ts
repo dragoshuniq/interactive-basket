@@ -1,4 +1,4 @@
-import type { Money } from "../shared";
+import type { Money } from "@constants/shared";
 
 export const PRODUCT_CODES = {
   RED: "R01",

@@ -1,6 +1,6 @@
 import { OfferType } from "./types";
 import type { Offer } from "./types";
-import { PRODUCT_CODES } from "../products";
+import { PRODUCT_CODES } from "@constants/products";
 
 export const OFFERS = [
   {

@@ -1,4 +1,4 @@
-import type { CurrencyCode } from "../shared";
+import type { CurrencyCode } from "@constants/shared";
 
 export type DeliveryRule = {
   value: number;

@@ -1,4 +1,4 @@
-import type { ProductCode } from "../products";
+import type { ProductCode } from "@constants/products";
 
 export const OfferType = {
   Discount: "Discount",
