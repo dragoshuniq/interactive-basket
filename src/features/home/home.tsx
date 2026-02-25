@@ -4,12 +4,34 @@ import {
   type Product,
   type ProductCode,
 } from "@constants";
+import { useBasketStore } from "@features/home/store";
 
 const products: Product[] = Object.values(PRODUCTS);
 
 export function Home() {
+  const addToBasket = useBasketStore((state) => state.add);
+  const decreaseFromBasket = useBasketStore(
+    (state) => state.decrease,
+  );
+  const removeFromBasket = useBasketStore(
+    (state) => state.remove,
+  );
+  const summary = useBasketStore((state) => state.summary);
+
   const onAddToBasket = (productCode: ProductCode): void => {
-    void productCode;
+    addToBasket(productCode);
+  };
+
+  const onDecreaseFromBasket = (
+    productCode: ProductCode,
+  ): void => {
+    decreaseFromBasket(productCode);
+  };
+
+  const onRemoveFromBasket = (
+    productCode: ProductCode,
+  ): void => {
+    removeFromBasket(productCode);
   };
 
   return (
@@ -22,7 +44,13 @@ export function Home() {
           products={products}
           onAddToBasket={onAddToBasket}
         />
-        <BasketSummary title="Basket" />
+        <BasketSummary
+          title="Basket"
+          summary={summary}
+          onIncrease={onAddToBasket}
+          onDecrease={onDecreaseFromBasket}
+          onRemove={onRemoveFromBasket}
+        />
       </div>
     </Layout>
   );
